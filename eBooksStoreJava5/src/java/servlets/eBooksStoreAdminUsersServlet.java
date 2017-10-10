@@ -136,25 +136,28 @@ public class eBooksStoreAdminUsersServlet extends HttpServlet {
                             // realize update of all selected rows
                             String ssn = s;
                             if("".equals(username)){ // only password/s should be updated
-                                String DML = "UPDATE EBOOKS.USERS SET password=?,role=? WHERE SSN=?";
+                                String DML = "UPDATE EBOOKS.USERS SET ssn=?, password=?,role=? WHERE SSN=?";
                                 pstmnt = connection.prepareStatement(DML);
-                                pstmnt.setString(1, user_password);
-                                pstmnt.setString(2, role);
-                                pstmnt.setString(3, ssn);
-                            }
-                            else if("".equals(user_password)){// only username should be updated
-                                String DML = "UPDATE EBOOKS.USERS SET name=?,role=? WHERE SSN=?";
-                                pstmnt = connection.prepareStatement(DML);
-                                pstmnt.setString(1, username);
-                                pstmnt.setString(2, role);
-                                pstmnt.setString(3, ssn);
-                            }else{
-                                String DML = "UPDATE EBOOKS.USERS SET name=?, password=?,role=? WHERE SSN=?";
-                                pstmnt = connection.prepareStatement(DML);
-                                pstmnt.setString(1, username);
+                                pstmnt.setString(1, ssn);
                                 pstmnt.setString(2, user_password);
                                 pstmnt.setString(3, role);
                                 pstmnt.setString(4, ssn);
+                            }
+                            else if("".equals(user_password)){// only username should be updated
+                                String DML = "UPDATE EBOOKS.USERS SET ssn=?, name=?,role=? WHERE SSN=?";
+                                pstmnt = connection.prepareStatement(DML);
+                                pstmnt.setString(1, ssn);
+                                pstmnt.setString(2, username);
+                                pstmnt.setString(3, role);
+                                pstmnt.setString(4, ssn);
+                            }else{
+                                String DML = "UPDATE EBOOKS.USERS SET ssn=?, name=?, password=?,role=? WHERE SSN=?";
+                                pstmnt = connection.prepareStatement(DML);
+                                pstmnt.setString(1, ssn);
+                                pstmnt.setString(2, username);
+                                pstmnt.setString(3, user_password);
+                                pstmnt.setString(4, role);
+                                pstmnt.setString(5, ssn);
                             }
                             boolean execute = pstmnt.execute();
                         }

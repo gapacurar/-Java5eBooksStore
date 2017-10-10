@@ -33,8 +33,8 @@
                 <li><a href="#">Orders</a>
                     <ul>
                         <%-- <li><a href="./eBooksStoreOrderBookPage.jsp">Orders</a></li> --%>
-                         
                         <li><a href="./eBooksStoreMainPage.jsp">Orders</a></li>
+                        <li><a href="./eBooksSoldEBooksPage.jsp">Sold eBooks</a></li>
                     </ul>
                 </li>    
             </c:when>

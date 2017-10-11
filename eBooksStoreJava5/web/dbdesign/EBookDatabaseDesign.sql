@@ -104,13 +104,13 @@ values (4, 'Gastronomie');
 insert into EBOOKS.BOOK_GENRES(id, genre)
 values (5, 'Stiinte');
 ------------------------
-insert into EBOOKS.USERS(SSN, NAME, PASSWORD)
+insert into EBOOKS.USERS(SSN, NAME, PASSWORD, ROLE)
 values('2801010121111', 'Pop Ana', 'iniana123','user');
 
-insert into EBOOKS.USERS(SSN, NAME, PASSWORD)
+insert into EBOOKS.USERS(SSN, NAME, PASSWORD, ROLE)
 values('1801010121122', 'Popa Andrei', 'iniandrei123','user');
 
-insert into EBOOKS.USERS(SSN, NAME, PASSWORD)
+insert into EBOOKS.USERS(SSN, NAME, PASSWORD, ROLE)
 values('2800910121133', 'Popa Andra', 'iniandra123','user');
 ------------------------
 insert into EBOOKS.ROLES(ROLE)

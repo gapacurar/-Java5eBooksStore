@@ -5,6 +5,8 @@
 --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+<%@ taglib uri="WEB-INF/tlds/astiro.tld" prefix="astiro" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,20 +17,29 @@
     </head>
     <body>
         <h1>Manage the books from Electronic Books Store</h1>
-        <form action="${pageContext.request.contextPath}/eBooksStoreAdminEBooks">
+        
             <%-- test if actual user is authenticated and authorized --%>
         <c:choose>
                 <c:when test="${validUser == true}">   
                     <!-- include menu -->
                     <%@ include file="./utils/eBooksStoreMenu.jsp" %>
                     <%-- Master view --%>
-                        <form action="${pageContext.request.contextPath}/eBooksStoreAdminUsersServlet" method="POST">                       
+                        <form action="${pageContext.request.contextPath}/eBooksStoreAdminUsersServlet" method="POST">  
+                            <%-- usage of JSTL tag setDataSource for DB connection 
                         <sql:setDataSource 
                         var="snapshot" 
                         driver="org.apache.derby.jdbc.ClientDriver40"
                         url="jdbc:derby://localhost:1527/ebooksstore;create=true;"
                         user="test"  
                         password="test"/>
+                            --%>
+                            <%-- usage of user defined tag to make connection to DB --%>
+                        <astiro:databseconnection
+                            connection="snapshot" 
+                            driver="org.apache.derby.jdbc.ClientDriver40"
+                            url="jdbc:derby://localhost:1527/ebooksstore;create=true;"
+                            username="test"  
+                            password="test"/>
                         <sql:query dataSource="${snapshot}" var="result">
                             SELECT ISBN, DENUMIRE, ID_TYPE, ID_QUALITY, PAGES, ID_GENRE, PRET FROM EBOOKS.EBOOKS
                         </sql:query>
@@ -153,7 +164,7 @@
                                 </td>
                             </tr>
                         </table>    
-                        </form>
+                        
             </c:when>
             <c:otherwise>
                 <c:redirect url="./Index.jsp"></c:redirect>

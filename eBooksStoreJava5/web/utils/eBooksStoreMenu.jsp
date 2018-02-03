@@ -34,7 +34,7 @@
                     <ul>
                         <%-- <li><a href="./eBooksStoreOrderBookPage.jsp">Orders</a></li> --%>
                         <li><a href="./eBooksStoreMainPage.jsp">Orders</a></li>
-                        <li><a href="./eBooksSoldEBooksPage.jsp">Sold eBooks</a></li>
+                        <li><a href="./eBooksSoldEBooksPage.jsp">eBooks Inventory</a></li>
                     </ul>
                 </li>    
             </c:when>

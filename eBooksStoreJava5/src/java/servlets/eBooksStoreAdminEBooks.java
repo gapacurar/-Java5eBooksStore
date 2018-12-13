@@ -77,7 +77,7 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                 catch (ClassNotFoundException | SQLException ex)
                 {
                     // display a message for NOT OK
-                    Logger.getLogger(eBooksStoreAdminUsersServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(eBooksStoreAdminEBooks.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 finally
                 {
@@ -87,7 +87,7 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                         {
                             resultSet.close();
                         }
-                        catch (SQLException ex){Logger.getLogger(eBooksStoreAdminUsersServlet.class.getName()).log(Level.SEVERE, null, ex);}
+                        catch (SQLException ex){Logger.getLogger(eBooksStoreAdminEBooks.class.getName()).log(Level.SEVERE, null, ex);}
                     }
                     if (statement != null)
                     {
@@ -95,7 +95,7 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                         {
                             statement.close();
                         }
-                        catch (SQLException ex){Logger.getLogger(eBooksStoreAdminUsersServlet.class.getName()).log(Level.SEVERE, null, ex);}
+                        catch (SQLException ex){Logger.getLogger(eBooksStoreAdminEBooks.class.getName()).log(Level.SEVERE, null, ex);}
                     }
                     if (pstmnt != null)
                     {
@@ -103,7 +103,7 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                         {
                             pstmnt.close();
                         }
-                        catch (SQLException ex){Logger.getLogger(eBooksStoreAdminUsersServlet.class.getName()).log(Level.SEVERE, null, ex);}
+                        catch (SQLException ex){Logger.getLogger(eBooksStoreAdminEBooks.class.getName()).log(Level.SEVERE, null, ex);}
                     }
                     if (connection != null)
                     {
@@ -111,13 +111,13 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                         {
                             connection.close();
                         }
-                        catch (SQLException ex){Logger.getLogger(eBooksStoreAdminUsersServlet.class.getName()).log(Level.SEVERE, null, ex);}
+                        catch (SQLException ex){Logger.getLogger(eBooksStoreAdminEBooks.class.getName()).log(Level.SEVERE, null, ex);}
                     }
                     // redirect page to its JSP as view
                     request.getRequestDispatcher("./eBooksStoreAdminEBooksPage.jsp").forward(request, response);
                 }
             }  // check push on Update button
-            else if (request.getParameter("admin_users_update") != null){ // update
+            else if (request.getParameter("admin_ebooks_update") != null){ // update
                 // declare specific variables
                 ResultSet resultSet = null;
                 Statement statement = null;
@@ -180,7 +180,7 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                 catch (ClassNotFoundException | SQLException ex)
                 {
                     // display a message for NOT OK
-                    Logger.getLogger(eBooksStoreAdminUsersServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(eBooksStoreAdminEBooks.class.getName()).log(Level.SEVERE, null, ex);
 
                 }
                 finally
@@ -191,7 +191,7 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                         {
                             resultSet.close();
                         }
-                        catch (SQLException ex){Logger.getLogger(eBooksStoreAdminUsersServlet.class.getName()).log(Level.SEVERE, null, ex);}
+                        catch (SQLException ex){Logger.getLogger(eBooksStoreAdminEBooks.class.getName()).log(Level.SEVERE, null, ex);}
                     }
                     if (pstmnt != null)
                     {
@@ -199,7 +199,7 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                         {
                             pstmnt.close();
                         }
-                        catch (SQLException ex){Logger.getLogger(eBooksStoreAdminUsersServlet.class.getName()).log(Level.SEVERE, null, ex);}
+                        catch (SQLException ex){Logger.getLogger(eBooksStoreAdminEBooks.class.getName()).log(Level.SEVERE, null, ex);}
                     }	
                     if (connection != null)
                     {
@@ -207,13 +207,13 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                         {
                             connection.close();
                         }
-                        catch (SQLException ex){Logger.getLogger(eBooksStoreAdminUsersServlet.class.getName()).log(Level.SEVERE, null, ex);}
+                        catch (SQLException ex){Logger.getLogger(eBooksStoreAdminEBooks.class.getName()).log(Level.SEVERE, null, ex);}
                     }
                     // redirect page to its JSP as view
                     request.getRequestDispatcher("./eBooksStoreAdminUsersPage.jsp").forward(request, response);
                 }
             } // check push on Delete button
-            else if (request.getParameter("admin_users_delete") != null) { // delete 
+            else if (request.getParameter("admin_ebooks_delete") != null) { // delete 
                 // declare specific variables
                 ResultSet resultSet = null;
                 PreparedStatement pstmnt = null;
@@ -240,12 +240,12 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                 }
                 catch (ClassNotFoundException | SQLException ex)
                 {
-                    Logger.getLogger(eBooksStoreAdminUsersServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(eBooksStoreAdminEBooks.class.getName()).log(Level.SEVERE, null, ex);
                     if (connection != null){
                         try {
                             connection.rollback();
                         } catch (SQLException ex1) {
-                            Logger.getLogger(eBooksStoreAdminUsersServlet.class.getName()).log(Level.SEVERE, null, ex1);
+                            Logger.getLogger(eBooksStoreAdminEBooks.class.getName()).log(Level.SEVERE, null, ex1);
                         }
                     }
                 }              
@@ -258,7 +258,7 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                             resultSet.close();
                         }
                         catch (SQLException ex){
-                            Logger.getLogger(eBooksStoreAdminUsersServlet.class.getName()).log(Level.SEVERE, null, ex);
+                            Logger.getLogger(eBooksStoreAdminEBooks.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
                     if (pstmnt != null)
@@ -268,7 +268,7 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                             pstmnt.close();
                         }
                         catch (SQLException ex){
-                            Logger.getLogger(eBooksStoreAdminUsersServlet.class.getName()).log(Level.SEVERE, null, ex);
+                            Logger.getLogger(eBooksStoreAdminEBooks.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
                     if (pstmnt != null)
@@ -278,7 +278,7 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                             pstmnt.close();
                         }
                         catch (SQLException ex){
-                            Logger.getLogger(eBooksStoreAdminUsersServlet.class.getName()).log(Level.SEVERE, null, ex);
+                            Logger.getLogger(eBooksStoreAdminEBooks.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
                     if (connection != null){
@@ -287,26 +287,26 @@ public class eBooksStoreAdminEBooks extends HttpServlet {
                             connection.setAutoCommit(true);
                         }
                         catch (SQLException ex){                          
-                            Logger.getLogger(eBooksStoreAdminUsersServlet.class.getName()).log(Level.SEVERE, null, ex);
+                            Logger.getLogger(eBooksStoreAdminEBooks.class.getName()).log(Level.SEVERE, null, ex);
                         }
                         finally{
                             try {
                                 connection.close();
                             } catch (SQLException ex) {
-                                Logger.getLogger(eBooksStoreAdminUsersServlet.class.getName()).log(Level.SEVERE, null, ex);
+                                Logger.getLogger(eBooksStoreAdminEBooks.class.getName()).log(Level.SEVERE, null, ex);
                             }
                         }
                     }
                     // redirect page to its JSP as view
-                    request.getRequestDispatcher("./eBooksStoreAdminUsersPage.jsp").forward(request, response);
+                    request.getRequestDispatcher("./eBooksStoreAdminEBooks.jsp").forward(request, response);
                 }
             } // check push on Cancel button
-            else if (request.getParameter("admin_users_cancel") != null){ // cancel
+            else if (request.getParameter("admin_ebooks_cancel") != null){ // cancel
                 request.getRequestDispatcher("./eBooksStoreMainPage.jsp").forward(request, response);
             } // check push on admin user roles button
-            else if (request.getParameter("admin_userroles_open") != null) { // insert values from fields
+            /*else if (request.getParameter("admin_userroles_open") != null) { // insert values from fields
                 request.getRequestDispatcher("./eBooksStoreAdminUserRolesPage.jsp").forward(request, response);
-            } // check push on admin customers button           
+            } // check push on admin customers button           */
         }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

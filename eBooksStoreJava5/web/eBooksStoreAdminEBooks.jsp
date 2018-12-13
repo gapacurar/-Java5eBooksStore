@@ -35,7 +35,7 @@
                             --%>
                             <%-- usage of user defined tag to make connection to DB --%>
                         <astiro:databseconnection
-                            connection="snapshot" 
+                            conexiune="snapshot" 
                             driver="org.apache.derby.jdbc.ClientDriver40"
                             url="jdbc:derby://localhost:1527/ebooksstore;create=true;"
                             username="test"  

@@ -25,7 +25,7 @@
     <tag-class>taghandlers.databseconnection</tag-class>
     <body-content>scriptless</body-content>
     <attribute>
-      <name>connection</name>
+      <name>conexiune</name>
       <required>true</required>
       <rtexprvalue>true</rtexprvalue>
       <type>java.lang.String</type>

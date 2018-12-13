@@ -26,7 +26,7 @@ public class databseconnection extends SimpleTagSupport implements javax.sql.Dat
     private String driver;
     private String username;
     private String password;
-    private String connection;
+    private String conexiune;
     private Connection connectionDB = null;
     /**
      * Called by the container to invoke this tag. The implementation of this
@@ -39,7 +39,6 @@ public class databseconnection extends SimpleTagSupport implements javax.sql.Dat
         JspWriter out = getJspContext().getOut();
         try {
             // set connection paramters to the DB
-            
             try
             {
                 Class driverClass = Class.forName(driver);
@@ -48,7 +47,7 @@ public class databseconnection extends SimpleTagSupport implements javax.sql.Dat
                 This can be used to execute Statements, PreparedStatements or
                 CallableStatements on DB.
                 */
-                getJspContext().setAttribute(connection, this, PageContext.SESSION_SCOPE);
+                getJspContext().setAttribute(conexiune, this, PageContext.SESSION_SCOPE);
             } 
             catch (ClassNotFoundException | SQLException ex)
             {
@@ -105,8 +104,8 @@ public class databseconnection extends SimpleTagSupport implements javax.sql.Dat
      *
      * @param connection
      */
-    public void setConnection(String connection) {
-        this.connection = connection;
+    public void setConexiune(String connection) {
+        this.conexiune = connection;
     }   
 
     /**
